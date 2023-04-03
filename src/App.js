@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from 'react';
+import RecipeInput from './recipeInput';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Welcome to the community recipe book!</h1>
+      <h4>Please add your favorite meals with their instructions</h4>
+      <RecipeInput />
     </div>
+
   );
 }
 
