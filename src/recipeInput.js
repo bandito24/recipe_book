@@ -19,7 +19,7 @@ export default function RecipeInput(){
     return(
         <div>
             <form>
-                <label htmlFor="recipe-title">Please Enter the name of your dish</label>
+                <label htmlFor="recipe-title">Please enter the name of your dish</label>
                 <input type="text" placeholder="Yum!" id="recipe-title" required/>
                 <br/>
                 <label htmlFor="recipe-description">Please Provide a brief description</label>
