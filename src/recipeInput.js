@@ -13,6 +13,7 @@ export default function RecipeInput(){
     }
 
     for(let i = 0; i < numIngredients; i++){
+        
                ingredientsArray.push(<Ingredient />)
     }
 

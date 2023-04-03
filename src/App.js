@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <h1>Welcome to the community recipe book!</h1>
-      <h4>Please add your favorite meals with their instructions</h4>
+      <h4>Please add your favorite meals with their instruction</h4>
       <RecipeInput />
     </div>
 
