@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Ingredient from './ingredient';
 
 export default function RecipeInput(){
     const [numIngredients, setNumIngredients] = useState(3)
-    const ingredientsArray = []
+    const [ingredientsArray, setIngredientsArray] = useState([])
 
+    const newIngredientsArray = []
 
-    const handleClick = (e) => {
+    const handleAdd = (e) => {
         e.preventDefault();
         setNumIngredients(numIngredients + 1)
         console.log(numIngredients)
     }
 
-    for(let i = 0; i < numIngredients; i++){
-        
-               ingredientsArray.push(<Ingredient />)
-    }
+    useEffect(() => {
+        for(let i = 0; i < numIngredients; i++){
+            newIngredientsArray.push(<Ingredient />)
+        }
+        setIngredientsArray(newIngredientsArray)
+    }, [numIngredients])
+
+   
 
     return(
         <div>
@@ -28,16 +33,17 @@ export default function RecipeInput(){
 
                 <h5>Add Ingredient and measurement/quantity</h5>
                 {ingredientsArray.map((value, index) => (
-                    <Ingredient key={index} />
-                ))
-
-                }<button onClick={handleClick}  >Add Another Ingredient</button>
-               
-
-
-
+                    <Ingredient key={index} 
+                    index={index}
+                    setNumIngredients={setNumIngredients}
+                    numIngredients={numIngredients}
+                    ingredientsArray={ingredientsArray}
+                    setIngredientsArray={setIngredientsArray}
+                    />
+                ))}
+                <button onClick={handleAdd}>Add Another Ingredient</button>
+            
             </form>
-
 
         </div>
     )
